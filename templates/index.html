@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <h1>Berapa ya {{pengaduan}}</h1>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Gender</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for datas in data %}
+            <tr>
+               
+                <td>{{ datas.nama }}</td>
+                <td>{{ datas.gender }}</td>
+                <td>{{ datas.status }}</td>
+                <td><a href="/edit?id={{datas._id}}" >Validasi</a></td>
+                <td> 
+                </td>
+               
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </body>
+</html>

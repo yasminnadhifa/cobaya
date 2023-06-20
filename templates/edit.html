@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/convert_to_pdf" method="post">
+        <h1>{{data.nama}}</h1>
+        <input type="hidden" name="nama" value="{{data.nama}}">
+        <input type="hidden" name="gender" value="{{data.gender}}">
+        <button type="submit" class="btn btn-outline-danger">Download PDF</button>
+    </form>
+    <form action="/edit" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{data['_id']}}">
+        <input type="hidden" name="tanggal" value="{{data['_id']}}">
+        <div>
+            <label for="">Status</label>
+            <select name="status">
+                <option value="Tidak tervalidasi">Tidak tervalidasi</option>
+                <option value="Validasi">Validasi</option>
+              </select>
+        </div>
+        <div>
+            <label for="">Upload PDF</label>
+            <input type="file" class="form-control" name="pdf" />
+        </div>
+        <button type="submit">Simpan</button>
+    </form>
+</body>
+</html>
